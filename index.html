@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- TODO: Set the document title to the name of your application -->
+    <title>Maison Élégance | Luxury Fashion House</title>
+    <meta name="description" content="Discover timeless luxury fashion at Maison Élégance. Haute couture, ready-to-wear, and bespoke accessories crafted in Paris since 1987." />
+    <meta name="author" content="Maison Élégance" />
+
+    <meta property="og:title" content="Maison Élégance | Luxury Fashion House" />
+    <meta property="og:description" content="Discover timeless luxury fashion at Maison Élégance. Haute couture, ready-to-wear, and bespoke accessories." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@Lovable" />
+    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <style>
+      #loader-wrapper {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+      }
+      #loader-logo {
+        width: 150px;
+        height: auto;
+        animation: pulse 2s infinite ease-in-out;
+        filter: drop-shadow(0 0 10px rgba(0,0,0,0.1));
+      }
+      .loader-text {
+        margin-top: 20px;
+        font-family: 'Times New Roman', serif;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        font-size: 14px;
+        color: #d4af37;
+        opacity: 0.8;
+      }
+      @keyframes pulse {
+        0% { transform: scale(1); opacity: 0.8; }
+        50% { transform: scale(1.05); opacity: 1; }
+        100% { transform: scale(1); opacity: 0.8; }
+      }
+      .loader-hidden {
+        opacity: 0;
+        visibility: hidden;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="loader-wrapper">
+      <img id="loader-logo" src="/logo.png" alt="Maison Élégance" />
+      <div class="loader-text">Maison Élégance</div>
+    </div>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <script>
+      window.addEventListener('load', function() {
+        const loader = document.getElementById('loader-wrapper');
+        setTimeout(() => {
+          loader.classList.add('loader-hidden');
+        }, 500);
+      });
+    </script>
+  </body>
+</html>
